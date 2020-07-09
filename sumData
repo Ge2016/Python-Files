@@ -1,0 +1,19 @@
+#Ge Xiong - 11/26/18
+#Inputs a file containing some integers and sums those integers. Outputs the file of the sum.
+
+def sumData(inputFile, outputFile):
+    for line in inputFile:
+        nums = [int(n) for n in line.split()]
+        total = 0
+        for i in nums:
+            total += i
+        outputFile.write(str(total))
+        print(total)
+
+  
+inputFile = open('numbers.txt','r')   
+outputFile = open('total.txt','w')
+sumData(inputFile, outputFile)
+
+inputFile.close()
+outputFile.close()
